@@ -1,0 +1,40 @@
+apply plugin:'eclipse'
+repositories {
+    maven {
+        url "http://redshift-maven-repository.s3-website-us-east-1.amazonaws.com/release/"
+    }
+}
+
+apply plugin: 'java'
+
+
+dependencies {
+    compile "com.amazon.redshift:redshift-jdbc42-no-awssdk:1.2.37.1061"
+
+    compile 'com.amazonaws:aws-java-sdk-core:1.11.118'
+    compile 'com.amazonaws:aws-java-sdk-redshift:1.11.118'
+    compile 'com.amazonaws:aws-java-sdk-sts:1.11.118'
+
+    testCompile 'org.testng:testng:6.8.1'
+}
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+
+    apply plugin: 'idea'
+    idea {
+        module {
+            outputDir = file('build/classes/main')
+            testOutputDir = file('build/classes/test')
+        }
+    }
+}

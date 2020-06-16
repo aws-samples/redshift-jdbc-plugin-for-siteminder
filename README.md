@@ -29,7 +29,7 @@ httpcore-4.4.9.jar
 jackson-annotations-2.6.0.jar
 jackson-core-2.6.6.jar
 jackson-databind-2.6.6.jar
-RedshiftJDBC42-no-awssdk-1.2.36.1060.jar / or any uber jar.
+RedshiftJDBC42-1.2.20.1043.jar / or any Redshift latest Driver jar.
 ```
 
 ## BUILDPATH
